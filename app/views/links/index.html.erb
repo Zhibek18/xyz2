@@ -1,0 +1,25 @@
+<div class = "container">
+<h1>XYZ2</h1>
+<table class = "table">
+	<th>
+
+		<td>Original URL </td>
+		<td> Created at</td>
+		<td> Short</td>
+		<td> Count</td>	
+	
+	</th>
+
+<% @links.each do |l| %>
+	<tr>
+		<td>            </td>
+		<td><%= link_to "#{l.url}", l.url %></td>
+		<td><%= l.created_at.strftime("%-m/%-d/%-y")%></td>	
+		<td><%= link_to "www.xyz.kz/" + "#{l.short}", l.url%></td>
+		<td><%= redirect%></td>
+
+
+	</tr>
+	<% end %>
+</table>
+</div>>
