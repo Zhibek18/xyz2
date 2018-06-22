@@ -1,5 +1,10 @@
 <div class = "container">
 <h1>XYZ2</h1>
+
+<%=form_for :link, url: create_path, method: :post, remote: true do |f|%>
+	<%= f.text_field :url, required: true%>
+	<%= f.submit :submit%>
+<%end%>
 <table class = "table">
 	<th>
 
@@ -9,17 +14,10 @@
 		<td> Count</td>	
 	
 	</th>
-
-<% @links.each do |l| %>
-	<tr>
-		<td>            </td>
-		<td><%= link_to "#{l.url}", l.url %></td>
-		<td><%= l.created_at.strftime("%-m/%-d/%-y")%></td>	
-		<td><%= link_to "www.xyz.kz/" + "#{l.short}", l.url%></td>
-		<td><%= redirect%></td>
-
-
-	</tr>
-	<% end %>
+	<tbody>
+ 	
+	<%render @links %>	
+		
+	</tbody>
 </table>
-</div>>
+</div>
